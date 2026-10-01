@@ -90,6 +90,12 @@ fun InicioScreen(
 
                     Spacer(modifier = Modifier.height(12.dp))
 
+                    Text(
+                        text = "Consulta en tiempo real los productos registrados por los vendedores mediante el ContentProvider.",
+                        style = MaterialTheme.typography.bodyMedium,
+                        textAlign = TextAlign.Center,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
 
                     Spacer(modifier = Modifier.height(16.dp))
 
@@ -108,7 +114,11 @@ fun InicioScreen(
                                 modifier = Modifier.size(16.dp)
                             )
                             Spacer(modifier = Modifier.width(6.dp))
-
+                            Text(
+                                text = "content://com.example.tienda_virtual.provider/productos",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = MaterialTheme.colorScheme.onSecondaryContainer
+                            )
                         }
                     }
                 }

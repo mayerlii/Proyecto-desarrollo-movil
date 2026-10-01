@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Permiso de lectura requerido por el ContentProvider de Tienda_virtual -->
-    <uses-permission android:name="com.example.tienda_virtual.READ_DATABASE" />
+    <uses-permission android:name="com.example.tienda_virtual.permission.READ_PRODUCTS" />
 
     <!-- Visibilidad de paquetes y proveedores para Android 11+ (API 30+) -->
     <queries>
