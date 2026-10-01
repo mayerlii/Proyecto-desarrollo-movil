@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Declaración de Permisos Personalizados de Lectura y Escritura para el ContentProvider -->
+    <permission
+        android:name="com.example.tienda_virtual.READ_DATABASE"
+        android:protectionLevel="normal" />
+    <permission
+        android:name="com.example.tienda_virtual.WRITE_DATABASE"
+        android:protectionLevel="normal" />
+
+    <!-- Permisos requeridos para acceder al ContentProvider -->
+    <uses-permission android:name="com.example.tienda_virtual.READ_DATABASE" />
+    <uses-permission android:name="com.example.tienda_virtual.WRITE_DATABASE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_logo_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Tienda_virtual">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Tienda_virtual"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".autenticacion.FormularioLifecycleActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Tienda_virtual"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- Declaración del ContentProvider Personalizado sobre Room DB -->
+        <provider
+            android:name=".data.provider.ProductoContentProvider"
+            android:authorities="com.example.tienda_virtual.provider"
+            android:exported="true"
+            android:readPermission="com.example.tienda_virtual.READ_DATABASE"
+            android:writePermission="com.example.tienda_virtual.WRITE_DATABASE" />
+
+    </application>
+
+</manifest>
